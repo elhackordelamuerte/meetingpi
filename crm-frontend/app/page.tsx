@@ -2,13 +2,13 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { api } from "../lib/api";
-import type { MeetingListResponse, RecordingStatus } from "../lib/types";
-import { RecordingControl } from "../components/RecordingControl";
-import { SystemStatus } from "../components/SystemStatus";
-import { MeetingCard } from "../components/MeetingCard";
-import { PipelineProgress } from "../components/PipelineProgress";
-import { useToast } from "../components/ui/Toast";
+import { api } from "@/lib/api";
+import type { MeetingListResponse, RecordingStatus } from "@/lib/types";
+import { RecordingControl } from "@/components/RecordingControl";
+import { SystemStatus } from "@/components/SystemStatus";
+import { MeetingCard } from "@/components/MeetingCard";
+import { PipelineProgress } from "@/components/PipelineProgress";
+import { useToast } from "@/components/ui/Toast";
 
 export default function DashboardPage() {
   const router = useRouter();

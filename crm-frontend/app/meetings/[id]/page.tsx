@@ -6,14 +6,14 @@ import { useState } from "react";
 import { ArrowLeft, Download, Trash2 } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { api } from "../../../lib/api";
-import type { Meeting } from "../../../lib/types";
-import { Badge } from "../../../components/ui/Badge";
-import { Button } from "../../../components/ui/Button";
-import { Spinner } from "../../../components/ui/Spinner";
-import { SummaryPanel } from "../../../components/SummaryPanel";
-import { TranscriptViewer } from "../../../components/TranscriptViewer";
-import { useToast } from "../../../components/ui/Toast";
+import { api } from "@/lib/api";
+import type { Meeting } from "@/lib/types";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Spinner } from "@/components/ui/Spinner";
+import { SummaryPanel } from "@/components/SummaryPanel";
+import { TranscriptViewer } from "@/components/TranscriptViewer";
+import { useToast } from "@/components/ui/Toast";
 
 type Tab = "summary" | "transcript";
 
