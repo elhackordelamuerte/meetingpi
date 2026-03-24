@@ -1,0 +1,58 @@
+version: "3.9"
+
+# Optional: local dev environment without a real Raspberry Pi.
+# Usage: docker compose up -d
+# Access: http://localhost:3000 (frontend) | http://localhost:8000 (backend API)
+
+services:
+  backend:
+    build:
+      context: ./pi-backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./pi-backend:/app
+      - recordings:/home/pi/recordings
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./meetingpi.db
+      - WHISPER_BIN=/app/stubs/whisper_stub
+      - WHISPER_MODEL_PATH=/app/stubs/model.bin
+      - OLLAMA_URL=http://ollama:11434
+      - OLLAMA_MODEL=phi3:mini
+      - AUDIO_DEVICE=plughw:1,0
+      - RECORDINGS_DIR=/home/pi/recordings
+      - KEEP_AUDIO=true
+    depends_on:
+      - ollama
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./crm-frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./crm-frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_PUBLIC_PI_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    command: npm run dev
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    # To pull a model: docker compose exec ollama ollama pull phi3:mini
+
+volumes:
+  recordings:
+  ollama_data:

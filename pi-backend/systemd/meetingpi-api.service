@@ -1,0 +1,26 @@
+[Unit]
+Description=MeetingPi FastAPI Backend
+Documentation=https://github.com/meetingpi/meetingpi
+After=network.target meetingpi-ollama.service
+Wants=meetingpi-ollama.service
+
+[Service]
+Type=simple
+User=cmoi
+Group=cmoi
+WorkingDirectory=/home/cmoi/meetingpi/pi-backend
+EnvironmentFile=-/home/cmoi/meetingpi/pi-backend/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/cmoi/meetingpi/.venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=meetingpi-api
+
+# Security hardening
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target
