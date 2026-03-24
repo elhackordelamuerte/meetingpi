@@ -2,8 +2,8 @@ import { clsx } from "clsx";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Eye, Trash2 } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import type { MeetingListItem } from "@/lib/types";
+import { Badge } from "./ui/Badge";
+import type { MeetingListItem } from "../lib/types";
 
 interface MeetingCardProps {
   meeting: MeetingListItem;

@@ -2,10 +2,10 @@
 
 import { clsx } from "clsx";
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@/lib/api";
-import type { SystemStats } from "@/lib/types";
-import { Card } from "@/components/ui/Card";
-import { Spinner } from "@/components/ui/Spinner";
+import { api } from "../lib/api";
+import type { SystemStats } from "../lib/types";
+import { Card } from "./ui/Card";
+import { Spinner } from "./ui/Spinner";
 
 interface SystemStatusProps {
   compact?: boolean;

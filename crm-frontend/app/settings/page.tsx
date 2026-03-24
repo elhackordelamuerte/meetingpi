@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Check, X } from "lucide-react";
-import { api } from "@/lib/api";
-import type { SystemHealth, SystemModels } from "@/lib/types";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { Spinner } from "@/components/ui/Spinner";
-import { useToast } from "@/components/ui/Toast";
+import { api } from "../../lib/api";
+import type { SystemHealth, SystemModels } from "../../lib/types";
+import { Button } from "../../components/ui/Button";
+import { Card } from "../../components/ui/Card";
+import { Spinner } from "../../components/ui/Spinner";
+import { useToast } from "../../components/ui/Toast";
 
 const DEFAULT_API_URL = process.env.NEXT_PUBLIC_PI_API_URL ?? "http://raspberrypi.local:8000";
 

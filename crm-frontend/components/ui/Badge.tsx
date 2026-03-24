@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { MeetingStatus } from "@/lib/types";
+import type { MeetingStatus } from "../../lib/types";
 
 interface BadgeProps {
   status: MeetingStatus | string;

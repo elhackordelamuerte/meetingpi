@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Spinner } from "@/components/ui/Spinner";
+import { Button } from "./ui/Button";
+import { Spinner } from "./ui/Spinner";
 
 interface TranscriptViewerProps {
   transcript: string | null;

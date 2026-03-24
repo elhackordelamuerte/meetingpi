@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
-import { Spinner } from "@/components/ui/Spinner";
-import type { MeetingStatus } from "@/lib/types";
+import { Spinner } from "./ui/Spinner";
+import type { MeetingStatus } from "../lib/types";
 
 interface SummaryPanelProps {
   summary: string | null;

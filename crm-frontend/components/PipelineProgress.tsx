@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { MeetingListItem, MeetingStatus } from "@/lib/types";
+import type { MeetingListItem, MeetingStatus } from "../lib/types";
 
 interface PipelineProgressProps {
   meeting: MeetingListItem;

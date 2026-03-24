@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LayoutDashboard, Mic, Settings } from "lucide-react";
 import { Providers } from "./providers";
-import { SystemStatus } from "@/components/SystemStatus";
+import { SystemStatus } from "../components/SystemStatus";
 
 export const metadata: Metadata = {
   title: "MeetingPi",

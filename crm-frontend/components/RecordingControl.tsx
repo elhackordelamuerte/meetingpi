@@ -3,8 +3,8 @@
 import { clsx } from "clsx";
 import { Mic, Square } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/Button";
-import { Spinner } from "@/components/ui/Spinner";
+import { Button } from "./ui/Button";
+import { Spinner } from "./ui/Spinner";
 
 interface RecordingControlProps {
   onStart: (title?: string) => Promise<void>;

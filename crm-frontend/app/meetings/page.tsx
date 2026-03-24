@@ -4,12 +4,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
-import { api } from "@/lib/api";
-import type { MeetingListResponse } from "@/lib/types";
-import { MeetingCard } from "@/components/MeetingCard";
-import { Button } from "@/components/ui/Button";
-import { Spinner } from "@/components/ui/Spinner";
-import { useToast } from "@/components/ui/Toast";
+import { api } from "../../lib/api";
+import type { MeetingListResponse } from "../../lib/types";
+import { MeetingCard } from "../../components/MeetingCard";
+import { Button } from "../../components/ui/Button";
+import { Spinner } from "../../components/ui/Spinner";
+import { useToast } from "../../components/ui/Toast";
 
 const STATUS_OPTIONS = [
   { value: "", label: "Tous les statuts" },
